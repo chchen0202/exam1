@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bs -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!-- validator -->
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.js"></script>
+
+    <!-- daterangepicker -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.25/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.25/daterangepicker.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.25/daterangepicker.min.css" rel="stylesheet"></link>
+    <title>Document</title>
+    <link href="css/main.css" rel="stylesheet" media="all">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="css/test.css" rel="stylesheet" media="all">
+
+    <!-- bs-icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body onload="runMe()">
+
+<div class="container mt-3 ">
+    <div class="row justify-content-center">
+        <div class="col-md-8 shadow p-3">
+            <div id="slides-with-indicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button
+                        class="active"
+                        type="button" 
+                        data-bs-target="#slides-with-indicators" 
+                        data-bs-slide-to="0"
+                        aria-current="true"
+                        aria-label="Slide 1">
+                    </button>
+
+                    <button
+                        class="active"
+                        type="button" 
+                        data-bs-target="#slides-with-indicators" 
+                        data-bs-slide-to="1"
+                        aria-current="true"
+                        aria-label="Slide 2">
+                    </button>
+
+                    <button
+                        class="active"
+                        type="button" 
+                        data-bs-target="#slides-with-indicators" 
+                        data-bs-slide-to="2"
+                        aria-current="true"
+                        aria-label="Slide 3">
+                    </button>
+                </div>                
+                
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="https://cdn.pixabay.com/photo/2017/07/31/17/51/emotions-2559504_1280.jpg" alt="">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="https://cdn.pixabay.com/photo/2019/09/03/16/47/travel-4449816_1280.jpg" alt="">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="https://cdn.pixabay.com/photo/2019/10/03/17/10/travel-4523902_1280.jpg" alt="">
+                    </div>
+
+                    <button class="carousel-control-prev" 
+                            type="button" 
+                            data-bs-target="#slides-with-indicators" 
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                    </button>
+
+                    <button class="carousel-control-next" 
+                            type="button" 
+                            data-bs-target="#slides-with-indicators" 
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            
+            <legend class="mt-3 text-success">SurveyCamp 生態體驗營</legend>
+            <p> SurveyCamp 生態體驗營開始報名囉！<br>                    
+                活動將帶您深入瞭解大自然，親身感受生態之美！<br>                    
+                由於名額有限，歡迎有興趣的朋友們踴躍報名！<br>                
+                主辦單位：xxxxxx<br>                    
+                website｜facebook | blog@surveycake.com</p>
+            <hr>
+
+            <form  class="mt-3 was-validated"  method="GET"  id="register_form" role="form" data-toggle="validator" onsubmit="return false" >
+                <fieldset id="form_content"> 
+                   
+                        <label class="d-block">
+                            <span class="form-label d-block">1. 姓名</span>
+                        </label>
+                        
+                        <div class="row g-2">
+                            <div class="col-md form-group mb-3 form-floating has-feedback">
+                                <input type="text" class="form-control" id="input_lastname" placeholder="Hans Chen" name="u_name" required="required">
+                                <label for="floatingInput">請填入姓氏</label>
+                                <div class="help-block with-errors text-danger"></div>
+                            </div>
+    
+                            <div class="col-md form-group mb-3 form-floating">
+                                <input type="text" class="form-control" id="input_firstname" placeholder="Hans Chen" name="u_name" required="required">
+                                <label for="floatingInput">請填入名字</label>
+                                <div class="help-block with-errors text-danger"></div>
+                             </div>
+                        </div>
+                        
+
+                    <label class="d-block">
+                        <span class="form-label d-block">2. Email</span>
+                    </label> 
+                    <div class="form-group mb-3 form-floating">
+                        <input id="input_email" type="email" class="form-control" placeholder="HansChen@moxa.com" name="u_email" required="required" pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$" data-error="Email格式錯誤 (e.g.,YOURNAME@moxa.com)">
+                        <label for="floatingInput">請填入Email</label>
+                        <div class="help-block with-errors text-danger"></div>
+                    </div>
+                    
+                    <label class="d-block">
+                        <span class="form-label d-block">3. 身分證字號</span>
+                    </label> 
+                    <div class="form-group mb-3 form-floating">
+                        <input id="input_id" type="text" class="form-control"  placeholder="A123456789" name="u_id" required="required" pattern="^[A-Z][12]\d{8}$" data-error="身分證字號格式錯誤 (e.g., A123456789)">
+                        <label for="floatingInput">請填入身分證字號</label>
+                        <div class="help-block with-errors text-danger"></div>
+                    </div>
+
+                    <label class="d-block">
+                        <span class="form-label d-block">4. 手機號碼</span>
+                    </label> 
+                  
+                    <div class="form-group">
+                        <div class="input-group has-feedback  mb-3 ">                             
+                            <span class="input-group-text">+886</span>                        
+                            <input type="text" class="form-control" id="input_mobile" placeholder="例 : 0912345678" name="u_mobile" required="required" pattern="^09[0-9]{8}$" data-error="手機格式錯誤 (e.g.,0912345678)">                                              
+                         </div>                                            
+                        <div class="help-block with-errors text-danger"></div>   
+                    </div>
+
+
+                    <label class="d-block">
+                        <span class="form-label d-block">5. 電話號碼</span>
+                    </label> 
+
+                    <div class="row g-2">
+                        <div class="col-md-2 mb-3 form-floating">
+                            <select id="input_telcode" class="form-select">                 
+                                <option value="01" disabled>01 (disabled)</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="037">037</option>
+                                <option value="04">04</option>
+                                <option value="049">049</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="082">082</option>
+                                <option value="089">089</option>
+                                <option value="0836">0836</option>
+                            </select>     
+                            <label for="input_telcode">區碼 </label> 
+
+                        </div>
+                        <div class="col-md-10 form-group mb-3 form-floating">
+                            <input type="text" class="form-control" id="input_tel" placeholder="A123456789" name="u_tel" required="required" pattern="\d{3,4}-?\d{4}" data-error="電話號碼格式錯誤">
+                            <label for="floatingInput">請填入電話號碼</label>
+                            <div class="help-block with-errors text-danger"></div>
+                        </div>                        
+                    </div>
+
+                    <label class="d-block">
+                        <span class="form-label d-block">6. 性別</span>
+                    </label> 
+
+                    <!-- <div class="row g-2">
+                        <div class="col-md-2 ms-2 form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked required="required">
+                            <label class="form-check-label" for="flexRadioDefault1">生理男</label>
+                        </div>
+                        <div class="col-md-2 ms-4 form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" required="required">
+                            <label class="form-check-label" for="flexRadioDefault2">生理女</label>
+                    </div> -->
+                    
+                    <div class="mb-3 row g-2">
+                        <ul class="col list-group">
+                            <li class=" list-group-item" >
+                                <input class="form-check-input" type="radio" name="gender_radio" id="radio1" checked required="required" value="男性">
+                                <label id="input_gender" class="form-check-label" for="radio1">男性</label>
+                            </li> 
+                        </ul>
+                        <ul class="col list-group">
+                            <li class="list-group-item" >
+                                <input class="form-check-input" type="radio" name="gender_radio" id="radio2" required="required" value="女性">
+                                <label id="input_gender" class="form-check-label" for="radio2">女性</label>
+                            </li> 
+                        </ul>
+                        <ul class="col list-group">
+                          <li class="list-group-item" >
+                              <input class="form-check-input" type="radio" name="gender_radio" id="radio3" required="required" value="非二元性別">
+                              <label id="input_gender" class="form-check-label" for="radio3">非二元性別</label>
+                          </li> 
+                      </ul>
+                    </div>
+                    
+                    <!-- 功能完善後再對UI進行升級 -->
+                    <!-- <div class="mb-6 container">
+                        <div class="radio-tile-group">
+                          <div class="input-container">
+                            <input id="walk" class="radio-button" type="radio" name="radio" checked/>
+                            <div class="radio-tile">
+                              <div class="icon walk-icon">                    
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                              </div>
+                              <label for="walk" class="radio-tile-label">生理男</label>
+                            </div>
+                          </div>                          
+                          
+                          <div class="input-container">
+                            <input id="bike" class="radio-button" type="radio" name="radio" />
+                            <div class="radio-tile">
+                              <div class="icon bike-icon">                                
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                              </div>
+                              <label for="bike" class="radio-tile-label" >生理女</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                 -->
+
+                    <label class="d-block">
+                        <span class="form-label d-block">7. 生日</span>
+                    </label> 
+                    <input id="input_birthday" class="mb-3 dateRange form-control" type="text" />
+
+                    <label class="d-block">
+                        <span class="form-label d-block">8. 選擇欲參加的活動</span>
+                    </label> 
+
+
+                    <div class="mb-3 row g-2" id="accordion" >
+
+                      <div class="col-md-3">
+                        <label>
+                          <input checked type="radio" name="event" class="card-input-element" data-bs-toggle="collapse" data-target="#collapseExample1" href="#collapseExample1" aria-controls="collapseExample1" aria-expanded="true"  value="Summer BBQ Party"  />      
+                            <div class="card card-default card-input" >
+                              <img src="https://media.istockphoto.com/id/1434816538/photo/toasting-at-family-gathering.webp?b=1&s=612x612&w=0&k=20&c=K1pfuw-YdNFhHQUnQxHiSI9Ep_SyR6wnn2OFo_ozMZ4=" class="card-img-top" alt="...">
+                              <div class="card-body">Summer BBQ Party</div>                              
+                            </div>
+                        </label>                                      
+                      </div>        
+                      
+
+                      <div class="col-md-3" id="headingTwo">
+                        <label>
+                          <input type="radio" name="event" class="card-input-element" data-bs-toggle="collapse" data-target="#collapseExample2" href="#collapseExample2" aria-controls="collapseExample2" aria-expanded="true" value="Entrepreneur Lecture Series"  />      
+                            <div class="card card-default card-input">
+                              <img src="https://media.istockphoto.com/id/499517325/photo/a-man-speaking-at-a-business-conference.jpg?b=1&s=170667a&w=0&k=20&c=BOVLG8A-VuYZmXlDvvv-uO0Z-7dgmGYTY6vd2q6R8C4=" class="card-img-top" alt="...">
+                              <div class="card-body">Entrepreneur Lecture </div>
+                            </div>
+                        </label>              
+                      </div>
+
+                      <div class="col-md-3">
+                        <label>
+                          <input type="radio" name="event" class="card-input-element" data-bs-toggle="collapse" data-target="#collapseExample3"  href="#collapseExample3" aria-controls="collapseExample3" aria-expanded="true" value="Family Sports Day" />      
+                            <div class="card card-default card-input">
+                              <img src="https://media.istockphoto.com/id/613346376/photo/professional-volleyball-players-in-action-on-the-night-court.jpg?s=612x612&w=0&k=20&c=ISFFRO3EgpJ2ToJag65faCQHAule7dLjIw2fpeDBDJ4=" class="card-img-top" alt="...">
+                              <div class="card-body">Family Sports Day</div>
+                            </div>
+                        </label>              
+                      </div>
+
+                      <div class="col-md-3">
+                        <label>
+                          <input type="radio" name="event" class="card-input-element" data-bs-toggle="collapse" data-target="#collapseExample4" href="#collapseExample4" aria-controls="collapseExample4" aria-expanded="true" value="Charity Run" />      
+                            <div class="card card-default card-input">
+                              <img src="https://cdn.pixabay.com/photo/2015/09/09/18/08/race-932254_1280.jpg" class="card-img-top" alt="...">
+                              <div class="card-body">Charity Run</div>
+                            </div>
+                        </label>            
+                      </div>
+
+
+                      <div class="collapse show mb-3" id="collapseExample1" data-bs-parent="#accordion" >
+                        <div class="card card-body">
+                          <div class="row">                            
+                            <div class="col-md-5">
+                              <img src="https://media.istockphoto.com/id/1434816538/photo/toasting-at-family-gathering.webp?b=1&s=612x612&w=0&k=20&c=K1pfuw-YdNFhHQUnQxHiSI9Ep_SyR6wnn2OFo_ozMZ4=" class="card-img-top" alt="...">
+                            </div>
+                            <div class="col-md-7 ">
+                              <table class="table table-striped">                                   
+                                <tbody>
+                                  <thead>
+                                    <tr>
+                                      <th scope="col" colspan="3">Summer BBQ Party</th>                                          
+                                    </tr>
+                                  </thead>                                      
+                                  <tr>
+                                    <th scope="row"></th>
+                                    <td><b>Date</b></td>
+                                    <td>July 15, 2023</td>                                    
+                                  </tr>
+                                  <tr>
+                                    <th scope="row"></th>
+                                    <td><b>Time</b></td>
+                                    <td>4:00 PM to 8:00 PM</td>                                       
+                                  </tr> 
+                                  <tr>
+                                    <th scope="row"></th>
+                                    <td><b>Location</b></td>
+                                    <td>BBQ area at ABC Park</td>                                       
+                                  </tr>   
+                                  <tr>
+                                    <th scope="row"></th>
+                                    <td><b>Event Highlights</b></td>
+                                    <td>BBQ, picnic, outdoor games, music performances</td>                                       
+                                  </tr>   
+                                  <tr class="table-info" >
+                                    <th scope="row"></th>
+                                    <td><b>Fee</b></td>
+                                    <td>Free admission</td>                                       
+                                  </tr>                                   
+                                </tbody>
+                              </table>
+                            </div> 
+                          </div>
+                        
+                        </div>
+                      </div>
+
+                      <div class="collapse mb-3" id="collapseExample2" data-bs-parent="#accordion" >
+                        <div class="card card-body">
+                          <div class="row">                            
+                            <div class="col-md-5">
+                              <img src="https://media.istockphoto.com/id/499517325/photo/a-man-speaking-at-a-business-conference.jpg?b=1&s=170667a&w=0&k=20&c=BOVLG8A-VuYZmXlDvvv-uO0Z-7dgmGYTY6vd2q6R8C4=" class="card-img-top" alt="...">
+                            </div>
+                            <div class="col-md-7">
+                              <table class="table table-striped">                                   
+                                <tbody>
+                                  <thead>
+                                    <tr>
+                                      <th scope="col" colspan="3">Entrepreneur Lecture Series</th>                                          
+                                    </tr>
+                                  </thead>                                      
+                                  <tr>
+                                    <th scope="row"></th>
+                                    <td><b>Date</b></td>
+                                    <td>August 10, 2023</td>                                    
+                                  </tr>
+                                  <tr>
+                                    <th scope="row"></th>
+                                    <td><b>Time</b></td>
+                                    <td>7:00 PM to 9:00 PM</td>                                       
+                                  </tr> 
+                                  <tr>
+                                    <th scope="row"></th>
+                                    <td><b>Location</b></td>
+                                    <td>XYZ Conference Center</td>                                       
+                                  </tr>   
+                                  <tr>
+                                    <th scope="row"></th>
+                                    <td><b>Event Highlights</b></td>
+                                    <td>Successful entrepreneurs sharing experiences, Q&A session, networking</td>                                       
+                                  </tr>   
+                                  <tr class="table-info" >
+                                    <th scope="row"></th>
+                                    <td><b>Fee</b></td>
+                                    <td>Company employees: $50/person,<br> Companions: $100/person</td>                                       
+                                  </tr>                                   
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>                          
+                      </div> 
+                      
+                      <div class="collapse mb-3" id="collapseExample3" data-bs-parent="#accordion" >
+                        <div class="card card-body">
+                          <div class="row">                            
+                            <div class="col-md-5">
+                              <img src="https://media.istockphoto.com/id/613346376/photo/professional-volleyball-players-in-action-on-the-night-court.jpg?s=612x612&w=0&k=20&c=ISFFRO3EgpJ2ToJag65faCQHAule7dLjIw2fpeDBDJ4=" class="card-img-top" alt="...">
+                            </div>
+                              <div class="col-md-7">
+                                <table class="table table-striped">                                   
+                                  <tbody>
+                                    <thead>
+                                      <tr>
+                                        <th scope="col" colspan="3">Family Sports Day</th>                                          
+                                      </tr>
+                                    </thead>                                      
+                                    <tr>
+                                      <th scope="row"></th>
+                                      <td><b>Date</b></td>
+                                      <td>September 3, 2023</td>                                    
+                                    </tr>
+                                    <tr>
+                                      <th scope="row"></th>
+                                      <td><b>Time</b></td>
+                                      <td>9:00 AM to 12:00 PM</td>                                       
+                                    </tr> 
+                                    <tr>
+                                      <th scope="row"></th>
+                                      <td><b>Location</b></td>
+                                      <td>123 Sports Field</td>                                       
+                                    </tr>   
+                                    <tr>
+                                      <th scope="row"></th>
+                                      <td><b>Event Highlights</b></td>
+                                      <td> Parent-child sportscompetitions, health seminars, game booths, free health check-ups</td>                                       
+                                    </tr>   
+                                    <tr class="table-info" >
+                                      <th scope="row"></th>
+                                      <td><b>Fee</b></td>
+                                      <td>Company employees: Free,<br> Companions: $50/person</td>                                       
+                                    </tr>                                   
+                                  </tbody>
+                                </table>
+                              </div>
+                          </div>
+                        </div>                                                  
+                      </div> 
+
+                      <div class="collapse mb-3" id="collapseExample4" data-bs-parent="#accordion" >
+                        <div class="card card-body">
+                          <div class="row">                            
+                            <div class="col-md-5">
+                              <img src="https://cdn.pixabay.com/photo/2015/09/09/18/08/race-932254_1280.jpg" class="card-img-top" alt="...">
+                            </div>
+                              <div class="col-md-7">                  
+                                  <table class="table table-striped">                                   
+                                    <tbody>
+                                      <thead>
+                                        <tr>
+                                          <th scope="col" colspan="3">Charity Run</th>                                          
+                                        </tr>
+                                      </thead>                                      
+                                      <tr>
+                                        <th scope="row"></th>
+                                        <td><b>Date</b></td>
+                                        <td>October 15, 2023</td>
+                                        
+                                      </tr>
+                                      <tr>
+                                        <th scope="row"></th>
+                                        <td><b>Time</b></td>
+                                        <td>8:00 AM to 11:00 AM</td>                                       
+                                      </tr> 
+                                      <tr>
+                                        <th scope="row"></th>
+                                        <td><b>Location</b></td>
+                                        <td>City Park</td>                                       
+                                      </tr>   
+                                      <tr>
+                                        <th scope="row"></th>
+                                        <td><b>Event Highlights</b></td>
+                                        <td>5K charity run, live music performances, food stalls, photo booth, lucky draw prizes</td>                                       
+                                      </tr>   
+                                      <tr class="table-info">
+                                        <th scope="row"></th>
+                                        <td><b>Fee</b></td>
+                                        <td>Company employees: $100/person,<br> Companions: $300/person</td>                                       
+                                      </tr>                                   
+                                    </tbody>
+                                  </table>
+                              </div>
+                          </div>                          
+                        </div>
+                      </div>  
+
+                      <label class="d-block">
+                        <span class="form-label d-block">9. 追加親友人數</span>
+                      </label> 
+                      
+                      <div class="center" id="add_cnt">                      
+                       <div class="input-group">
+                              <span class="input-group-btn">
+                                  <button type="button" class="btn btn-danger btn-number"  data-type="minus" data-field="quant[2]">
+                                    <span class="fa-solid fa-minus"></span>
+                                  </button>
+                              </span>
+                              <input id="input_cnt" type="text" name="quant[2]" class="form-control input-number" value="0" min="0" max="10">
+                              <span class="input-group-btn">
+                                  <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="quant[2]">
+                                      <span class="fa-solid fa-plus"></span>
+                                  </button>
+                              </span>
+                        </div>   
+                      </div>
+
+                      <div id=collapse_content>
+
+
+                      </div>                          
+
+                      <label class="d-block">
+                        <span class="form-label d-block">10. 備註</span>
+                    </label> 
+                    <div class="form-group mb-3 ">
+                        <textarea class="form-control" id="input_note" rows="3"></textarea>
+                    </div>
+                            
+                    </div>
+
+<!-- 
+                    <div class="mb-2">                
+                        <button class="contact100-form-btn btn btn-danger btn-block" type="submit">填寫完畢送出</button>
+                    </div> -->
+
+                        <button onclick="runMe2()"
+                            type="submit"
+                            class="btn btn-primary col-md-12"                      
+                            data-bs-toggle="modal"                            
+                            data-bs-target="#my-modal"> 填寫完畢送出                          
+                        </button >
+                        <div
+                            class="modal fade"
+                            id="my-modal"
+                            tabindex="-1"
+                            aria-labelledby="my-modal-label"
+                            aria-hidden="true"
+                            data-bs-backdrop="static"
+                            data-bs-keyfalse="false">
+                            <div class="modal-dialog">
+                               <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="my-modal-label">請再次確認以下報名資訊</h5>
+                                        <button
+                                            type="button"
+                                            class="btn-close"
+                                            data-bs-dismiss="modal"
+                                            aria-label="Close">
+                                        </button>
+                                    </div>
+                                    <div class="modal-body" id="confirm_text">
+                                      <table class="table table-striped"> 
+                                        <thead>
+                                          <tr>
+                                            <th scope="col" colspan="2"><b>填表人</b></th>                                          
+                                          </tr>
+                                        </thead>                                      
+                                        <tbody>                                                                         
+                                          <tr >
+                                            <th scope="row"></th>
+                                            <td>姓名</td>  
+                                            <td id="confirm_name"></td>                                                                                          
+                                          </tr>
+                                          <tr>
+                                            <th scope="row"></th>
+                                            <td>Email</td>      
+                                            <td id="confirm_email"></td>                                                                         
+                                          </tr> 
+                                          <tr>
+                                            <th scope="row"></th>
+                                            <td>身分證字號</td>  
+                                            <td id="confirm_id"></td>                                                                             
+                                          </tr>   
+                                          <tr>
+                                            <th scope="row"></th>
+                                            <td>手機號碼</td>  
+                                            <td id="confirm_mobile"></td>                                                                           
+                                          </tr>   
+                                          <tr>
+                                            <th scope="row"></th>
+                                            <td>電話號碼</td>      
+                                            <td id="confirm_tel"></td>                                                                          
+                                          </tr>   
+                                          <tr>
+                                            <th scope="row"></th>
+                                            <td>性別</td>    
+                                            <td id="confirm_gender"></td>                                                                             
+                                          </tr> 
+                                          <tr>
+                                            <th scope="row"></th>
+                                            <td>生日</td>  
+                                            <td id="confirm_birthday"></td>                                                                            
+                                          </tr> 
+                                          <tr>
+                                            <th scope="row"></th>
+                                            <td>參與活動</td> 
+                                            <td id="confirm_event"></td>                                                                             
+                                          </tr> 
+                                          <tr>
+                                            <th scope="row"></th>
+                                            <td>追加親友人數</td>
+                                            <td id="confirm_cnt"></td>                                                                                
+                                          </tr> 
+                                          <tr>
+                                            <th scope="row"></th>
+                                            <td>參加總人數</td>
+                                            <td id="confirm_ttlcnt"></td>                                                                                
+                                          </tr>
+                                          <tr>
+                                            <th scope="row"></th>
+                                            <td>備註</td>
+                                            <td id="confirm_note"></td>                                                                                
+                                          </tr>   
+                                          <tr class="table-danger">
+                                            <th scope="row"></th>
+                                            <td>報名費</td>
+                                            <td id="confirm_fee"></td>                                                                                
+                                          </tr>  
+                                          <tr class="table-primary">
+                                            <th scope="row"></th>
+                                            <td>總報名費(含親友)</td>
+                                            <td id="confirm_ttlfee"></td>                                                                                
+                                          </tr>                                 
+                                        </tbody>
+                                      </table>                                        
+                                    </div>
+                                    
+                                    <div id="modal_add_content"></div>
+                                    
+                                    <div class="modal-footer">
+                                        <button
+                                            type="button"
+                                            class="btn btn-secondary"
+                                            data-bs-dismiss="modal">
+                                            返回
+                                        </button>
+                                        <button class="btn btn-primary" type="button" id="final_submit" onclick="final_submit()" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">送出</button>
+                                    </div>
+                               </div> 
+                            </div>
+                        </div>
+
+
+                        <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                          <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalToggleLabel2">已成功提交報名資訊</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body" id="end_modal">
+                                
+                              </div>
+                              <div class="modal-footer">
+                                <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal">關閉</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                                           
+
+                </fieldset>
+            </form>
+
+           
+                    
+               
+              
+        </div>
+    </div>
+</div>
+
+<script src="js/examjs.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+</body>
+</html>
+
