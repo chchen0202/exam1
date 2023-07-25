@@ -470,3 +470,34 @@ $(".input-number").keydown(function (e) {
 //     }
 //     // e.preventDefault(); // 防止原始 form 提交表單
 // });
+
+const msalConfig = {
+    auth: {
+      clientId: '8e7a6053-0a4d-4c64-849e-612f52269cec', // 替换成您在步骤1中获得的 Client ID
+    }
+  };
+  
+  const msalInstance = new Msal.UserAgentApplication(msalConfig);
+
+function login() {
+msalInstance.loginPopup()
+    .then(response => {
+    // 登录成功后的处理逻辑
+    console.log('登录成功！', response);
+    })
+    .catch(error => {
+    // 登录失败的处理逻辑
+    console.log('登录失败：', error);
+    });
+}
+
+msalInstance.handleRedirectCallback(response => {
+if (response !== null) {
+    // 回调处理成功，用户已登录
+    console.log('用户已登录！', response);
+    // 这里可以获取用户信息或执行其他操作
+} else {
+    // 回调处理失败或用户未登录
+    console.log('用户未登录或回调处理失败。');
+}
+});
